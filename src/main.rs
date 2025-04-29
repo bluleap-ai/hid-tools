@@ -20,15 +20,15 @@ struct Args {
     pid: u16,
 
     /// Data to send (hex string, will be padded to 64 bytes)
-    #[arg(short, long)]
+    #[arg(short = 's', long)]
     data: Option<String>,
 
     /// Number of times to retry if device is busy
-    #[arg(short, long, default_value = "3")]
+    #[arg(short = 'r', long, default_value = "3")]
     retries: u32,
 
     /// Delay between retries in milliseconds
-    #[arg(short, long, default_value = "100")]
+    #[arg(short = 'd', long, default_value = "100")]
     retry_delay: u64,
 
     /// Keep reading input reports after sending data
